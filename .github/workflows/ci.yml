@@ -73,6 +73,7 @@ jobs:
         with:
           image-ref: ${{ env.IMAGE_NAME }}:latest
           format: table
+          output: trivy-results.txt
           exit-code: "1"
           severity: CRITICAL
           ignore-unfixed: true
@@ -82,5 +83,5 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: trivy-results
-          path: trivy-results.sarif
+          path: trivy-results.txt
           retention-days: 7
