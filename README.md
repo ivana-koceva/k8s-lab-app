@@ -49,6 +49,6 @@ k8s-lab-app/
 
 | Repo | What it does |
 |------|-------------|
-| [k8s-infra](https://github.com/yourusername/k8s-infra) | Provisions the VM and bootstraps the cluster |
-| [k8s-lab-gitops](https://github.com/yourusername/k8s-lab-gitops) | Helm charts, ArgoCD Applications, per-app values |
+| [k8s-infra](https://github.com/ivana-koceva/k8s-lab-infra) | Provisions the VM and bootstraps the cluster |
+| [k8s-lab-gitops](https://github.com/ivana-koceva/k8s-lab-gitops) | Helm charts, ArgoCD Applications, per-app values |
 | **k8s-lab-app** | This repo |
