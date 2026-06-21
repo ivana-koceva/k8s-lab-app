@@ -1,9 +1,11 @@
 from flask import Flask, jsonify
-from prometheus_client import CONTENT_TYPE_LATEST, generate_latest
+from prometheus_flask_exporter import PrometheusMetrics
 
 APP_VERSION = "0.1.0"
 
 app = Flask(__name__)
+metrics = PrometheusMetrics(app)
+metrics.info("app_info", "Application info", version=APP_VERSION)
 
 
 @app.get("/")
@@ -14,11 +16,6 @@ def index():
 @app.get("/health")
 def health():
     return jsonify(healthy=True)
-
-
-@app.get("/metrics")
-def metrics():
-    return generate_latest(), 200, {"Content-Type": CONTENT_TYPE_LATEST}
 
 
 if __name__ == "__main__":
